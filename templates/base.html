@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}Home{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/app.css' %}">
+    {% block stylesheet %}{% endblock %}
+</head>
+<body>
+{% block body %}
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Whoosh</a>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+{% endblock body %}  <!-- AND HERE -->
+<script language="JavaScript" type="text/javascript" src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+<script language="JavaScript" type="text/javascript" src="{% static 'js/popper.min.js' %}"></script>
+<script language="JavaScript" type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+
+{% block javascript %}{% endblock %}
+</body>
+</html>
